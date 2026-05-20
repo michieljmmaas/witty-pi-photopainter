@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create release zip
+        run: |
+          zip wittypi-photopainter.zip \
+            display_picture.py \
+            convert_pictures.py \
+            install.sh \
+            devmode.sh \
+            normalmode.sh \
+            goodnight.sh \
+            clear_logs.sh \
+            custom_wittypi_code/afterStartup.sh \
+            custom_wittypi_code/schedules/custom_2ms_every_waking_hour.wpi
+
+      - name: Upload to release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload ${{ github.ref_name }} wittypi-photopainter.zip

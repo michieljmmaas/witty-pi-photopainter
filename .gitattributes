@@ -1,0 +1,5 @@
+# Ensure shell scripts and Python files always use LF line endings on the Pi,
+# even when edited on Windows.
+*.sh    text eol=lf
+*.py    text eol=lf
+*.wpi   text eol=lf

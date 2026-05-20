@@ -1,0 +1,68 @@
+Third-Party Licenses
+====================
+
+The install script (install.sh) downloads the following third-party components.
+Their licenses are reproduced here for attribution.
+
+
+────────────────────────────────────────────────────────────────────────────────
+WittyPi 4
+https://github.com/uugear/Witty-Pi-4
+────────────────────────────────────────────────────────────────────────────────
+
+MIT License
+
+Copyright (c) 2022 Dun Cat B.V. (UUGear)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+────────────────────────────────────────────────────────────────────────────────
+WiringPi
+https://github.com/WiringPi/WiringPi
+────────────────────────────────────────────────────────────────────────────────
+
+Licensed under the GNU Lesser General Public License v3.0 (LGPL-3.0).
+
+You may copy, distribute, and modify this software under the terms of the LGPL,
+provided that modifications are also released under the LGPL. The full license
+text is available at: https://www.gnu.org/licenses/lgpl-3.0.html
+
+
+────────────────────────────────────────────────────────────────────────────────
+Waveshare e-Paper
+https://github.com/waveshare/e-Paper
+────────────────────────────────────────────────────────────────────────────────
+
+No license file is present in this repository. All rights are reserved by
+Waveshare Electronics by default. The driver is downloaded solely for use
+with Waveshare hardware as intended by the vendor.
+
+convert_pictures.py is also based on Waveshare's original PhotoPainter
+conversion script. Additions in this project: HEIC support, rich progress bar.
+
+
+────────────────────────────────────────────────────────────────────────────────
+UUGear Web Interface (UWI)
+https://www.uugear.com
+────────────────────────────────────────────────────────────────────────────────
+
+Closed-source software distributed by UUGear (Dun Cat B.V.). Downloaded
+directly from the vendor's servers during installation. No source code is
+available. Use is subject to UUGear's terms.

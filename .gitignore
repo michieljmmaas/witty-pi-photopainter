@@ -1,0 +1,28 @@
+# Downloaded libraries — installed automatically by install.sh
+RPi_Zero_PhotoPainter/
+uwi/
+RPi_Zero_PhotoPainter.zip
+
+# WittyPi software — installed automatically by install.sh
+# Custom hooks and schedules live in custom_wittypi_code/ instead
+wittypi/
+
+# Runtime data files
+battery_log.csv
+photo_state.txt
+*.log
+
+# Personal photos — add your own 800x480 BMP files to my_photos/
+my_photos/
+photos_input/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Linux user dotfiles
+.bash_history
+.bash_logout
+.bashrc
+.profile
