@@ -230,10 +230,10 @@ else
   ok "Schedules copied"
   ok "Default: 2 min ON / 58 min OFF (every waking hour)"
 
-  # ── [10/14] Low voltage protection ───────────────────────────────────────
-  step "Set low voltage protection  (3.4 V)"
-  run_quiet "Configure wittyPi.sh threshold" \
-    bash -c "printf '7\n3.4\n13\n' | bash '$WITTYPI_DIR/wittyPi.sh'"
+  # ── [10/14] Sync RTC + low voltage protection ────────────────────────────
+  step "Sync RTC with network time and set low voltage protection  (3.4 V)"
+  run_quiet "Sync RTC + set voltage threshold" \
+    bash -c "printf '3\n7\n3.4\n13\n' | bash '$WITTYPI_DIR/wittyPi.sh'"
 fi
 
 # ── [11/14] Waveshare 7.3" e-ink driver ───────────────────────────────────────

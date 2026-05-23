@@ -41,11 +41,11 @@ This build requires a **Raspberry Pi Zero 2W** running **Raspberry Pi OS Lite (6
 ---
 
 ### Step 2 — Download and install
+Download the artefact zip in the user directory of the Pi (where you ssh into), unzip it and run the install script. Simple as!
 
 ```bash
 wget https://github.com/michieljmmaas/witty-pi-photopainter/releases/latest/download/wittypi-photopainter.zip
-unzip wittypi-photopainter.zip -d ~
-cd wittypi
+unzip wittypi-photopainter.zip
 sudo bash install.sh
 sudo reboot
 ```
