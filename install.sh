@@ -228,7 +228,7 @@ else
   cp "$SCRIPT_DIR/custom_wittypi_code/schedules/"*.wpi "$WITTYPI_DIR/schedules/"
   cp "$WITTYPI_DIR/schedules/custom_2ms_every_waking_hour.wpi" "$WITTYPI_DIR/schedule.wpi"
   ok "Schedules copied"
-  ok "Default: 2 min ON / 58 min OFF (every waking hour)"
+  ok "Default: 2 min ON / 58 min OFF, hourly from 08:00 to 24:00"
 
   # ── [10/14] Sync RTC + low voltage protection ────────────────────────────
   step "Sync RTC with network time and set low voltage protection  (3.4 V)"
