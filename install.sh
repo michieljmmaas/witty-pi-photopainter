@@ -252,6 +252,33 @@ else
     cp -r /var/tmp/waveshare_src/e-Paper-master/RaspberryPi_JetsonNano/python/lib/waveshare_epd \
       "$WAVESHARE_LIB/" || ERR=$((ERR+1))
     rm -rf /var/tmp/waveshare.zip /var/tmp/waveshare_src
+
+    # This HAT's power-enable line is physically wired to GPIO27, but
+    # Waveshare's shared epdconfig.py (reused across many of their products)
+    # has had this value drift upstream over time -- it was 27 as of Nov
+    # 2025, and silently became 18 by Sept 2026. That mismatch doesn't
+    # error: the panel's power section just never enables, so display()
+    # hangs forever waiting for BUSY to release. Force it back to the
+    # value verified against this exact product, regardless of whatever
+    # master.zip currently ships.
+    python3 - "$WAVESHARE_LIB/waveshare_epd/epdconfig.py" <<'PYEOF' \
+      && ok "Patched PWR_PIN to GPIO27 for RaspberryPi class" \
+      || ERR=$((ERR+1))
+import re, sys
+path = sys.argv[1]
+with open(path) as f:
+    text = f.read()
+text, n = re.subn(
+    r'(class RaspberryPi:.*?)PWR_PIN(\s*=\s*)\d+',
+    r'\g<1>PWR_PIN\g<2>27',
+    text, count=1, flags=re.S,
+)
+if n != 1:
+    sys.exit("PWR_PIN pattern not found in RaspberryPi class")
+with open(path, 'w') as f:
+    f.write(text)
+PYEOF
+
     chown -R "$SUDO_USER:$(id -g -n $SUDO_USER)" "$USER_HOME/RPi_Zero_PhotoPainter" \
       || ERR=$((ERR+1))
     ok "Waveshare driver installed"
