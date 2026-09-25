@@ -33,7 +33,7 @@ components underneath.
 
 ### 3D printed frame
 
-STLs and print settings: **[Thingiverse](THINGIVERSE-URL)**
+STLs and print settings: **[Thingiverse](https://www.thingiverse.com/thing:7414109)**
 
 Four parts — frame, lid, push rod and cable clamp. Black PLA, 0.2 mm
 layers, no supports. The frame print needs a pause near the end to drop
@@ -46,7 +46,6 @@ Thingiverse page.
 | 4 × M4×12 countersunk screws | Hold the lid on |
 | USB-C extension cable, male to female | ~10 cm — [the one I used](https://www.amazon.nl/dp/B094XQXM8M) |
 | Split pin | Retains the push rod |
-| Foam padding | Lines the sides |
 
 ---
 
