@@ -9,7 +9,7 @@ an hour then gets you roughly **4 weeks** on a charge.
 It also replaces the kit's wooden frame with a 3D-printed one, so the
 larger battery fits and you can charge the frame without taking it apart.
 
-![Finished frame](pictures/view.png)
+![Finished frame](pictures/frame.png)
 
 ---
 
