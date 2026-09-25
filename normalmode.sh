@@ -1,6 +1,6 @@
 #!/bin/bash
 WITTYPI_DIR=/home/pi/wittypi
-TARGET=custom_2ms_every_hour_workhours.wpi
+TARGET=custom_2ms_every_waking_hour.wpi
 
 echo "Switching to NORMAL schedule..."
 
