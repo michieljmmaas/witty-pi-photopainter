@@ -243,13 +243,15 @@ if [ -f "$WAVESHARE_LIB/waveshare_epd/epd7in3e.py" ]; then
   skip "Waveshare driver"
 else
   mkdir -p "$WAVESHARE_LIB"
+  # Downloaded to /var/tmp (on-disk), not /tmp: the Waveshare repo zip is
+  # larger than the RAM-backed /tmp tmpfs on low-memory Pis (e.g. Pi Zero).
   download "Waveshare e-Paper repo" \
     "$URL_WAVESHARE" \
-    /tmp/waveshare.zip && {
-    run_quiet "Unpack Waveshare library" unzip -q /tmp/waveshare.zip -d /tmp/waveshare_src
-    cp -r /tmp/waveshare_src/e-Paper-master/RaspberryPi_JetsonNano/python/lib/waveshare_epd \
+    /var/tmp/waveshare.zip && {
+    run_quiet "Unpack Waveshare library" unzip -q /var/tmp/waveshare.zip -d /var/tmp/waveshare_src
+    cp -r /var/tmp/waveshare_src/e-Paper-master/RaspberryPi_JetsonNano/python/lib/waveshare_epd \
       "$WAVESHARE_LIB/" || ERR=$((ERR+1))
-    rm -rf /tmp/waveshare.zip /tmp/waveshare_src
+    rm -rf /var/tmp/waveshare.zip /var/tmp/waveshare_src
     chown -R "$SUDO_USER:$(id -g -n $SUDO_USER)" "$USER_HOME/RPi_Zero_PhotoPainter" \
       || ERR=$((ERR+1))
     ok "Waveshare driver installed"
